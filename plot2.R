@@ -1,0 +1,5 @@
+data <- read.csv2("household_power_consumption.txt")
+dt <- subset(data, data$Date == "1/2/2007" | data$Date == "2/2/2007")
+plot(as.numeric(dt$Global_active_power)/1000,type="l",ylab="Global Active Power (kilowatts)",xlab="")
+dev.copy(png,file="plot2.png")
+dev.off()
